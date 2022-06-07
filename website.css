@@ -1,0 +1,105 @@
+body{
+    background-color: #525E75;
+    text-align: center;
+    color:#FFEDDB;
+    font-family: 'Merriweather Sans', sans-serif;
+    /* refer cssfontstack.com// fonts.google.com */
+  
+  }
+  
+  h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 330%;
+    margin-bottom: 0px;
+    /* 100% = 16px;= 1em  */
+    /* best use rem */
+  }
+  .a-programmer h2{
+    font-size: 1rem;
+    margin-top: 0px;
+  }
+  h2{
+    font-family: 'Montserrat', sans-serif;
+  }
+  h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #CFB784;
+  }
+  hr{
+  
+    border-style: dotted none none;
+    border-color: #CFB784;
+    width:5%;
+    border-width:10px;
+    height: 0px;
+  }
+  .div1{
+    background-color: #DAEAF1;
+    color:black;
+    height:550px;
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+  }
+  
+  .sifath_image{
+    margin-top: 5%;
+    width:13%;
+    /* margin-right: 30px;
+    float: left; */
+  }
+  .skills-img{
+    margin-top: 5%;
+    width:15%;
+    margin-right: 30px;
+    float: left;
+    /* float is used wrap text around image */
+  }
+  .gym-img{
+    margin-top: 5%;
+    width:15%;
+    margin-left: 30px;
+    float:right;
+  }
+  .pro{
+    font-size: 25px;
+    font-style: revert-layer;
+  }
+  .cloud_one{
+    position: absolute;
+    right:30%;
+  }
+  .cloud_two{
+    position: absolute;
+    left: 30%;
+  
+  }
+  .mountain{
+    margin: 0;
+  }
+  a.footer-link:visited,a.btn:link{
+    color: black;
+  }
+  .profile{
+    margin:0% auto 5% auto;
+  }
+  .skill-row1,.skill-row2{
+    width: 50%;
+    margin: 3% auto;
+    text-align: left;
+    line-height: 2;
+  }
+  .contact-me,.links{
+    margin: 2% auto 1% auto;
+  
+  }
+  .links{
+    color: black;
+    background-color: #DAEAF1;
+  }
+  .links img{
+    padding-top: 2%;
+    width: 3%;
+    margin: 0 5px;
+  }
+  
