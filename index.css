@@ -1,0 +1,212 @@
+/node_modules
+/.pnp
+.pnp.js
+/build
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+.env
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+ 11  
+amazon-clone/craco.config.js
+@@ -0,0 +1,11 @@
+// craco.config.js
+module.exports = {
+    style: {
+      postcss: {
+        plugins: [
+          require('tailwindcss'),
+          require('autoprefixer'),
+        ],
+      },
+    },
+  }
+ 17,223  
+amazon-clone/package-lock.json
+Large diffs are not rendered by default.
+
+ 57  
+amazon-clone/package.json
+@@ -0,0 +1,57 @@
+{
+  "name": "amazon-clone",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@craco/craco": "^6.1.2",
+    "@terebentina/react-popover": "^2.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "fuse.js": "^6.4.6",
+    "moment": "^2.29.1",
+    "momentjs": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-google-login": "^5.2.2",
+    "react-image-magnify": "^2.7.4",
+    "react-modal": "^3.14.3",
+    "react-outside-click-handler": "^1.3.0",
+    "react-popover": "^0.5.10",
+    "react-redux": "^7.2.4",
+    "react-responsive-carousel": "^3.2.19",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "redux": "^4.1.0",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
+  }
+}
+ 1  
+amazon-clone/public/favicon.svg
+Unable to render rich display
+
+ 6  
+amazon-clone/public/index.css
+@@ -0,0 +1,6 @@
+body{
+    background-color: #eaeded;
+}
+.bg{
+    background-color: #eaeded;
+}
+ 16  
+amazon-clone/public/index.html
+@@ -0,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/3d6de4e569.js" crossorigin="anonymous"></script>
+
+    <title>Amazon.in Clone</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" class="bg"></div>
+  </body>
+</html>
+ 3  
+amazon-clone/public/robots.txt
+@@ -0,0 +1,3 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+ 71  
+amazon-clone/tailwind.config.js
+@@ -0,0 +1,71 @@
+module.exports = {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    screens: {
+      '2xl': {'max': '1535px'},
+      // => @media (max-width: 1535px) { ... }
+
+      'xl': {'max': '1279px'},
+      // => @media (max-width: 1279px) { ... }
+
+      'lg': {'max': '1023px'},
+      // => @media (max-width: 1023px) { ... }
+
+      'md': {'max': '972px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '639px'},
+      // => @media (max-width: 639px) { ... }
+      'lgsc':{'min':"1280px"}
+    },
+    backgroundColor: theme => ({
+      ...theme('colors'),
+      'search_1': '#f3f3f3',
+     }),
+    extend: {
+      colors: {
+        amazon_blue: {
+          light: "#232F3E",
+          DEFAULT: "#131921",
+        },
+        amazon_yellow:{
+          DEFAULT: "#febd69"
+        },
+        cart_color:{
+          DEFAULT:"#df8305"
+        },
+        card_color:{
+          DEFAULT:"#aae0d0"
+        },
+        amazon_gray:{
+          DEFAULT:"#eaeded"
+        },
+        amazon_footer:{
+          light:"#37475A",
+          dark:"#131a22",
+          subtext:"#767c6c",
+          DEFAULT:"#ffffff"
+        },
+        others:{
+          search:"#c45516",
+          sort:"#f0f2f2",
+          search2:"#f4f4f4",
+          searchSelect:"#e7f4f5",
+          searchSelectText:"#1e8294",
+          proceed:"#f1c34f",
+          proceed2:"#f7dea1",
+          DEFAULT:"#fff",
+          // address:"#f2c75d"
+        }
+      },
+    },
+  },
+  variants: {
+    variants: ["active"],
+    extend: {
+      backgroundColor: ['active'],
+    }
+  },
+  plugins: [],
+}
